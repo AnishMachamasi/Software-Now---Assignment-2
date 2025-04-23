@@ -107,3 +107,5 @@ def main():
         else:
             print("\n Decryption is incorrect!")
 
+if __name__ == '__main__':
+    main()
