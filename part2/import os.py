@@ -23,7 +23,7 @@ seasonal_temps = defaultdict(lambda: defaultdict(list))
 
 # Process file from 1986 - 2005
 for year in range(1986, 2006):
-    filename = f'stations_group_{year}.csv'
+    filename = f'/Users/gina/Documents/GitHub/Software-Now---Assignment-2/temperature_data/stations_group_{year}.csv'
     if not os.path.exists(filename):
         print(f"Warning: File not found - {filename}")
         continue
