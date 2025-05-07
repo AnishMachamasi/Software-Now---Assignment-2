@@ -22,8 +22,9 @@ station_stats = defaultdict(lambda: {
 seasonal_temps = defaultdict(lambda: defaultdict(list))
 
 # Process file from 1986 - 2005
-for year in range(1986, 2006):
-    filename = f'/Users/gina/Desktop/temperature_data/stations_group_{year}.csv'
+for year in range(1986, 2006): 
+    filename = f'/Users/gina/Documents/GitHub/Software-Now---Assignment-2/temperature_data/stations_group_{year}.csv'
+
     if not os.path.exists(filename):
         print(f"Warning: File not found - {filename}")
         continue
@@ -42,14 +43,14 @@ for year in range(1986, 2006):
                 temp = float(row[month])
                 monthly_temps.append(temp)
 
-                # Update stats
+                # Update data
                 station_stats[station_name]['temps'].append(temp)
                 station_stats[station_name]['max_temp'] = max(station_stats[station_name]['max_temp'], temp)
                 station_stats[station_name]['min_temp'] = min(station_stats[station_name]['min_temp'], temp)
                 station_stats[station_name]['total_temp'] += temp
                 station_stats[station_name]['count'] += 1
 
-                # update season
+                # record by season
                 for season, months in seasons.items():
                     if month in months:
                         seasonal_temps[season][station_name].append(temp)
